@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -115,28 +114,34 @@ class MyApp extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.w300),
                   ),
                   const SizedBox(height: 5.0),
-                  Container(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    alignment: Alignment.centerLeft,
-                    width: 80,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFf1f3fd),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: const Text('Мужчина'),
-                  ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    alignment: Alignment.centerLeft,
-                    width: 80,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFf1f3fd),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: const Text('Женщина'),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const SizedBox(height: 20.0),
+                      Container(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        alignment: Alignment.centerLeft,
+                        width: 140,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFf1f3fd),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: const Text('Мужчина'),
+                      ),
+                      const SizedBox(width: 20.0),
+                      Container(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        alignment: Alignment.centerLeft,
+                        width: 140,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFf1f3fd),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: const Text('Женщина'),
+                      ),
+                    ],
                   ),
                 ],
               ),
