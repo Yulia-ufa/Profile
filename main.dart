@@ -18,93 +18,13 @@ class MyApp extends StatelessWidget {
               Header(),
               const SizedBox(height: 5.0),
               Photo(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Ваше Имя",
-                    style: TextStyle(fontWeight: FontWeight.w300),
-                  ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    alignment: Alignment.centerLeft,
-                    width: 300,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFf1f3fd),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: const Text('Куцай Юлия Александровна'),
-                  ),
-                ],
-              ),
+              const DataField('Ваше Имя', "Куцай Юлия Александровна"),
               const SizedBox(height: 20.0),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Дата Рождения",
-                    style: TextStyle(fontWeight: FontWeight.w300),
-                  ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    alignment: Alignment.centerLeft,
-                    width: 300,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFf1f3fd),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: const Text('22.02.1975'),
-                  ),
-                ],
-              ),
+              const DataField("Дата Рождения", "22.02.1975"),
               const SizedBox(height: 20.0),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Ваше Работа",
-                    style: TextStyle(fontWeight: FontWeight.w300),
-                  ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    alignment: Alignment.centerLeft,
-                    width: 300,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFf1f3fd),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: const Text('Менеджер'),
-                  ),
-                ],
-              ),
+              const DataField("Должность", "Менеджер"),
               const SizedBox(height: 20.0),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Месячный доход",
-                    style: TextStyle(fontWeight: FontWeight.w300),
-                  ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    alignment: Alignment.centerLeft,
-                    width: 300,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFf1f3fd),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: const Text('30000 рублей'),
-                  ),
-                ],
-              ),
+              const DataField("Заработок", "30000"),
               const SizedBox(height: 20.0),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -149,6 +69,38 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class DataField extends StatelessWidget {
+  const DataField(this.header, this.text);
+
+  final String header;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          header,
+          style: const TextStyle(fontWeight: FontWeight.w300),
+        ),
+        const SizedBox(height: 5.0),
+        Container(
+          padding: const EdgeInsets.only(left: 10.0),
+          alignment: Alignment.centerLeft,
+          width: 300,
+          height: 50,
+          decoration: BoxDecoration(
+            color: const Color(0xFFf1f3fd),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Text(text),
+        ),
+      ],
     );
   }
 }
