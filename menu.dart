@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
               const SizedBox(height: 20.0),
               Division(),
               const SizedBox(height: 30.0),
-              const Data(text: 'Персональные данные'),
+              const Data(text: "Персональные данные"),
               const SizedBox(height: 20.0),
               const Data(text: 'Настройки'),
               const SizedBox(height: 20.0),
@@ -33,6 +33,8 @@ class MyApp extends StatelessWidget {
               const Data(text: 'Наш справочник'),
               const SizedBox(height: 20.0),
               const Data(text: 'Сообщество'),
+              const SizedBox(height: 20.0),
+              Help(),
               const SizedBox(height: 20.0),
             ],
           ),
@@ -84,7 +86,7 @@ class Person extends StatelessWidget {
 }
 
 class Data extends StatelessWidget {
-  const Data({this.text});
+  const Data({required this.text});
 
   final String text;
 
@@ -130,6 +132,33 @@ class Division extends StatelessWidget {
     return Container(
       height: 1.0,
       color: Colors.black12,
+    );
+  }
+}
+
+class Help extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: 50,
+          width: 440,
+          decoration: BoxDecoration(
+            color: Colors.blue[100],
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: const Offset(0, 0),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
