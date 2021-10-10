@@ -18,21 +18,42 @@ class MyApp extends StatelessWidget {
               const SizedBox(height: 20.0),
               Division(),
               const SizedBox(height: 30.0),
-              const Data(text: "Персональные данные"),
+              const Data(
+                text: "Персональные данные",
+                icon: Icons.perm_identity,
+              ),
               const SizedBox(height: 20.0),
-              const Data(text: 'Настройки'),
+              const Data(
+                text: 'Настройки',
+                icon: Icons.settings,
+              ),
               const SizedBox(height: 20.0),
-              const Data(text: 'Электронное Заявление'),
+              const Data(
+                text: 'Электронное Заявление',
+                icon: Icons.description,
+              ),
               const SizedBox(height: 10.0),
               Division(),
               const SizedBox(height: 30.0),
-              const Data(text: 'Реферальный Код'),
+              const Data(
+                text: 'Реферальный Код',
+                icon: Icons.favorite,
+              ),
               const SizedBox(height: 20.0),
-              const Data(text: 'Часто задаваемые вопросы'),
+              const Data(
+                text: 'Часто задаваемые вопросы',
+                icon: Icons.pending,
+              ),
               const SizedBox(height: 20.0),
-              const Data(text: 'Наш справочник'),
+              const Data(
+                text: 'Наш справочник',
+                icon: Icons.drive_file_rename_outline,
+              ),
               const SizedBox(height: 20.0),
-              const Data(text: 'Сообщество'),
+              const Data(
+                text: 'Сообщество',
+                icon: Icons.groups,
+              ),
               const SizedBox(height: 20.0),
               Help(),
               const SizedBox(height: 20.0),
@@ -86,9 +107,13 @@ class Person extends StatelessWidget {
 }
 
 class Data extends StatelessWidget {
-  const Data({required this.text});
+  const Data({
+    required this.text,
+    required this.icon,
+  });
 
   final String text;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -112,6 +137,7 @@ class Data extends StatelessWidget {
                   ),
                 ],
               ),
+              child: Icon(icon),
             ),
             const SizedBox(width: 10.0),
             Text(
